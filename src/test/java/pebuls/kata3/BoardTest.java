@@ -18,4 +18,20 @@ public class BoardTest {
 
         assertEquals(0, neighbors.size());
     }
+
+
+    @Test
+    public void twoCellsNextToEachOtherShouldBeNeighbors() throws Exception {
+
+        Board board = new Board();
+        board.addCell(new Cell(0, 0));
+        board.addCell(new Cell(0, 1));
+
+        List<Cell> neighborsOfFirstCell = board.getNeighbors(new Cell(0, 0));
+        List<Cell> neighborsOfSecondCell = board.getNeighbors(new Cell(0, 1));
+
+        assertArrayEquals(new Cell[] { new Cell(0, 1) }, neighborsOfFirstCell.toArray());
+        assertArrayEquals(new Cell[] { new Cell(0, 0) }, neighborsOfSecondCell.toArray());
+    }
+
 }

@@ -1,8 +1,10 @@
 package pebuls.kata3;
 
-
-import javafx.scene.control.Cell;
 import org.junit.Test;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class BoardTest {
 

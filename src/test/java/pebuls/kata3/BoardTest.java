@@ -46,4 +46,19 @@ public class BoardTest {
 
         assertEquals(0, neighbors.size());
     }
+
+    @Test
+    public void middleCellOf3x3BlockShouldHaveEightNeighbors() throws Exception {
+
+        Board board = new Board();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board.addCell(new Cell(i, j));
+            }
+        }
+
+        List<Cell> neighbors = board.getNeighbors(new Cell(1, 1));
+
+        assertEquals(8, neighbors.size());
+    }
 }

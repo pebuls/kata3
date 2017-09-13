@@ -35,4 +35,15 @@ public class BoardTest {
         assertArrayEquals(new Cell[] { new Cell(0, 0) }, neighborsOfSecondCell.toArray());
     }
 
+    @Test
+    public void aTwoSingleCellsFarFromEachOtherShouldHaveZeroNeighbors() throws Exception {
+
+        Board board = new Board();
+        board.addCell(new Cell(0, 0));
+        board.addCell(new Cell(0, 100));
+
+        List<Cell> neighbors = board.getNeighbors(new Cell(0, 0));
+
+        assertEquals(0, neighbors.size());
+    }
 }

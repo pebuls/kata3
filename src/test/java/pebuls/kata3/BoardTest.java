@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class BoardTest {
@@ -12,9 +13,9 @@ public class BoardTest {
     public void aSingleCellShouldHaveZeroNeighbors() throws Exception {
 
         Board board = new Board();
-        board.addCell(new Cell());
+        board.addCell(new Cell(0,0));
 
-        List<Cell> neighbors = board.getNeighbors(new Cell());
+        List<Cell> neighbors = board.getNeighbors(new Cell(0,0));
 
         assertEquals(0, neighbors.size());
     }
